@@ -1,4 +1,9 @@
-#Get the cities of agents booking an order from a customer whose cis id ‘c006’
+--Claudia Rojas
+--September 28, 2016
+--Lab 4 SQL Queries: The Subqueries Sequel
+
+
+#Get the cities of agents booking an order from a customer whose cis id â€˜c006â€™
 select distinct city
 from agents
 where aid in(
