@@ -3,7 +3,7 @@ September 28, 2016
 Lab 4 SQL Queries: The Subqueries Sequel*/
 
 
-/*Get the cities of agents booking an order from a customer whose cis id ‘c006’*/
+/*Get the cities of agents booking an order from a customer whose cis id â€˜c006â€™*/
 select distinct city
 from agents
 where aid in(
@@ -30,11 +30,13 @@ where cid not in(
 
 /*Get the ids of customers who ordered both products p01 and p07*/
 select distinct cid
-from customers
-where cid in(
-	select cid
-    from orders
-    where pid = 'p01' or pid = 'p07');
+from orders
+where pid = ('p01')
+	Intersect
+select distinct cid
+from orders
+where pid = ('p07');
+
 
 /*Get the ids of products NOT ordered by any customers who placed any order though agent 108 in pid order from highest to lowest*/
 select distinct pid 
