@@ -1,0 +1,58 @@
+--Claudia Rojas
+--Lab 8 Normalization
+
+---------------------------------------------------------------------------
+
+DROP TABLE IF EXISTS directors;
+DROP TABLE IF EXISTS actors;
+DROP TABLE IF EXISTS movies;
+
+CREATE TABLE IF NOT EXISTS directors(
+	did			char(4) NOT NULL,
+	name	 	text,
+	birth	 	text,
+	spouse	 	text,
+	filmschool	text,
+	DGD			text,
+	favlens		text,
+	primary key(did)
+	);
+CREATE TABLE IF NOT EXISTS actors(
+	aid			char(4) NOT NULL,
+	name	 	text,
+	address		text,
+	birth	 	text,
+	eyeColor	text,
+	hairColor	text,
+	height		int,
+	weight		int,
+	spouse	 	text,
+	favColor	text,
+	SAG			int,
+	primary key(aid)
+);
+
+CREATE TABLE IF NOT EXISTS movies(
+	mid			char(4) NOT NULL,
+	name	 	text,
+	release	 	int,
+	MPAA	 	text,
+	domSales	int,
+	forSales	int,
+	dbSales		int,
+	primary key(mid)
+);
+
+--Actors--
+INSERT INTO actors(aid, name, address, birth, eyeColor, hairColor, height, weight, spouse, favColor, SAG)
+	VALUES ('a001','Michael Fassbender', 'London, England', 'April 2, 1977', 'Blue', 'Brown', 72, 174, 'Alicia Vikander', 'Green', 2010);
+
+INSERT INTO actors(aid, name, address, birth, eyeColor, hairColor, height, weight, spouse, favColor, SAG)
+	VALUES ('a002', 'Idris Elba', 'London, England', 'September 6, 1972', 'Brown', 'Black', 75, 175, 'None', 'Blue', '2015');
+
+INSERT INTO actors(aid, name, address, birth, eyeColor, hairColor, height, weight, spouse, favColor, SAG)
+	VALUES ('a003', 'Tom Hardy', 'London, England', 'September 15, 1977', 'Blue', 'Brown', 69, 165, 'Charlotte Riley', 'Brown', NULL);
+
+INSERT INTO actors(aid, name, address, birth, eyeColor, hairColor, height, weight, spouse, favColor, SAG)
+	VALUES ('a004', 'Henry Cavill', 'London, England', 'May 5, 1983', 'Blue', 'Brown', 72 , 170 , 'None', 'Blue', NULL);
+
