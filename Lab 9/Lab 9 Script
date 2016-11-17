@@ -10,7 +10,9 @@ DROP TABLE IF EXISTS flightCO;
 DROP TABLE IF EXISTS spacecraft;
 DROP TABLE IF EXISTS crew;
 DROP TABLE IF EXISTS systems;
+DROP TABLE IF EXISTS systemsupplies;
 DROP TABLE IF EXISTS parts;
+DROP TABLE IF EXISTS systemsparts;
 DROP TABLE IF EXISTS supplier;
 DROP TABLE IF EXISTS catalog;
 
@@ -63,11 +65,17 @@ Create table crew(
 );
 
 Create table systems(
-	syid 		char(4) NOT NULL,
+	sysid 		char(4) NOT NULL,
 	name		text,
 	desc		text,
 	costUSD		int,
-	primary key (syid)
+	primary key (sysid)
+);
+
+Create table systemsupplies(
+	sysid 		char(4) NOT NULL references systems(sysid),
+	sid		char(4)NOT NULL references spacecraft(sid),
+	primary key (sysid,sid)
 );
 
 Create table parts(
@@ -78,19 +86,13 @@ Create table parts(
 	primary key (paid)
 );
 
-Create table systems(
-	suid 		char(4) NOT NULL,
-	name		text,
-	add			text,
-	payment		text,
-	primary key (suid)
-);
+
 
 Create table catalog(
-	syid 		char(4) NOT NULL references systems(syid),
+	sysid 		char(4) NOT NULL references systems(sysid),
 	paid 		char(4) NOT NULL references systems(paid),
 	suid 		char(4) NOT NULL references systems(suid),
-	primary key (syid,paid,suid)
+	primary key (sysid,paid,suid)
 );
 
 
