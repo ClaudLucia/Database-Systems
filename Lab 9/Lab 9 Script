@@ -1,0 +1,97 @@
+--Claudia Rojas
+--Lab 9 Normalization
+--November 14, 2016
+
+
+DROP TABLE IF EXISTS people;
+DROP TABLE IF EXISTS engineers;
+DROP TABLE IF EXISTS astronauts;
+DROP TABLE IF EXISTS flightCO;
+DROP TABLE IF EXISTS spacecraft;
+DROP TABLE IF EXISTS crew;
+DROP TABLE IF EXISTS systems;
+DROP TABLE IF EXISTS parts;
+DROP TABLE IF EXISTS supplier;
+DROP TABLE IF EXISTS catalog;
+
+
+Create table people(
+	pid 		char(4) NOT NULL,
+	firstname	text,
+	lastname	text,
+	age			int,
+	primary key (pid)
+);
+
+Create table engineers(
+	pid 		char(4) NOT NULL references people(pid),
+	HAD			text,
+	favVG		text,
+	primary key (pid)
+);
+
+Create table astronauts(
+	pid 		char(4) NOT NULL references people(pid),
+	yearsFl		int,
+	GH			text,
+	spouse		text,
+	primary key (pid)
+);
+
+Create table flightCO(
+	pid 		char(4) NOT NULL references people(pid),
+	chair		text,
+	prefDrink	text,
+	recHC		text,
+	primary key (pid)
+);
+
+Create table spacecraft(
+	sid 		char(4) NOT NULL,
+	name		text,
+	tailNum		int,
+	weight		int,
+	fuel		text,
+	crewCap		int,
+	primary key (sid)
+);
+
+Create table crew(
+	sid 		char(4) NOT NULL references spacecraft(sid),
+	pid 		char(4) NOT NULL references people(pid),
+	primary key (sid,pid)
+);
+
+Create table systems(
+	syid 		char(4) NOT NULL,
+	name		text,
+	desc		text,
+	costUSD		int,
+	primary key (syid)
+);
+
+Create table parts(
+	paid 		char(4) NOT NULL,
+	name		text,
+	desc		text,
+	costUSD		int,
+	primary key (paid)
+);
+
+Create table systems(
+	suid 		char(4) NOT NULL,
+	name		text,
+	add			text,
+	payment		text,
+	primary key (suid)
+);
+
+Create table catalog(
+	syid 		char(4) NOT NULL references systems(syid),
+	paid 		char(4) NOT NULL references systems(paid),
+	suid 		char(4) NOT NULL references systems(suid),
+	primary key (syid,paid,suid)
+);
+
+
+
