@@ -163,7 +163,7 @@ INSERT INTO actors(pid, birth, eyeColor, hairColor, height, weight, favColor, SA
 	VALUES ('p004', 'May 5, 1983', 'Blue', 'Brown', 72 , 170 , 'Blue', NULL);
 
 
-
+--Actors in--
 INSERT INTO actsin(pid, mpaa)
 	VALUES('p001', 47068);
 INSERT INTO actsin(pid, mpaa)
@@ -171,5 +171,46 @@ INSERT INTO actsin(pid, mpaa)
 
 INSERT INTO actsin(pid, mpaa)
 	VALUES('p002', 47068);
+INSERT INTO actsin(pid, mpaa)
+	VALUES('p002', 48301);
+
+INSERT INTO actsin(pid, mpaa)
+	VALUES('p003', 49770);
+INSERT INTO actsin(pid, mpaa)
+	VALUES('p003', 48693);
+
+INSERT INTO actsin(pid, mpaa)
+	VALUES('p004', 49390);
+INSERT INTO actsin(pid, mpaa)
+	VALUES('p004', 48169);
+
+
+--Directors in--
+
+INSERT INTO directsin(pid, mpaa)
+	VALUES('p005', 47068);
+
+INSERT INTO actsin(pid, mpaa)
+	VALUES('p006', 48296);
+
+INSERT INTO actsin(pid, mpaa)
+	VALUES('p007', 48301);
+
+INSERT INTO actsin(pid, mpaa)
+	VALUES('p008', 49770);
+
+INSERT INTO actsin(pid, mpaa)
+	VALUES('p009', 49693);
+
+INSERT INTO actsin(pid, mpaa)
+	VALUES('p010', 49390);
+
+INSERT INTO actsin(pid, mpaa)
+	VALUES('p011', 48169);
+
+
+
+
+
 
 
