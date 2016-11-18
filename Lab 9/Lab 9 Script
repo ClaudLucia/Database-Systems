@@ -9,12 +9,13 @@ DROP TABLE IF EXISTS astronauts;
 DROP TABLE IF EXISTS flightCO;
 DROP TABLE IF EXISTS spacecraft;
 DROP TABLE IF EXISTS crew;
-DROP TABLE IF EXISTS systems;
 DROP TABLE IF EXISTS systemsupplies;
-DROP TABLE IF EXISTS parts;
+DROP TABLE IF EXISTS systems;
 DROP TABLE IF EXISTS systemsparts;
-DROP TABLE IF EXISTS supplier;
+DROP TABLE IF EXISTS parts;
 DROP TABLE IF EXISTS catalog;
+DROP TABLE IF EXISTS suppliers;
+
 
 
 Create table people(
@@ -86,14 +87,24 @@ Create table parts(
 	primary key (paid)
 );
 
-
-
-Create table catalog(
-	sysid 		char(4) NOT NULL references systems(sysid),
-	paid 		char(4) NOT NULL references systems(paid),
-	suid 		char(4) NOT NULL references systems(suid),
-	primary key (sysid,paid,suid)
+Create table systemparts(
+	paid 		char(4) NOT NULL references parts(paid),
+	sysid 		char(4) NOT NULL references parts(sysid),
+	primary key (paid)
 );
 
+Create table catalog(
+	paid 		char(4) NOT NULL references parts(paid),
+	suid 		char(4) NOT NULL references suppliers(suid),
+	primary key (PAID,SUID)
+);
+
+Create table suppliers(
+	suid 		char(4) NOT NULL,
+	name		text,
+	address		text,
+	paymentTerms	text,
+	primary key (SUID)
+);
 
 
