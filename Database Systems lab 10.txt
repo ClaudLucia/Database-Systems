@@ -1,0 +1,38 @@
+/*
+Claudia Rojas
+Database Systems*/
+
+
+/*
+function	PreReqsFor(courseNum)	
+Returns	the	immediate prerequisites for the	
+passed-in course	number.	*/
+
+create function prerReqsFor(INT, refcursor) RETURNS REFCURSOR 
+AS $$
+DECLARE 
+    course int :=$1;
+    resultset refcursor :=2;
+begin
+    open resultset for
+    SELECT num,name
+    FROM course
+    WHERE num in(
+            Select prereqnum
+            from prerequisites
+            where courseNUM = course);
+    return resultset;
+end;
+$$
+language plpgsql;
+
+
+
+/*
+
+
+
+
+
+
+*/
