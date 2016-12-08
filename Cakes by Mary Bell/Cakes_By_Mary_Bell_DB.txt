@@ -1,0 +1,102 @@
+--Cakes by Mary Bell Store Database
+
+
+--Cupcakes ($5)
+	--Original Flavors
+		Contains Nuts
+			Rainbow 
+			Black and white 
+			PB&J (contains nuts)
+			Cookie Dough
+			Triple Choco Fudge
+			Red Velvet
+			Mint Cookie
+			Choco Chip Pancake
+
+	--Fan Favorites
+		Contains Nuts
+			Rainbow 
+			Black and White 
+			PB&J (contains nuts)
+			Cookie Dough
+			Triple Choco Fudge
+			Red Velvet
+			Mint Cookie
+			Original Cheescake
+			Choco Velvet
+			Cinnamon Roll
+			Choco Coco
+
+	--Gluten Free
+			GF Rainbow
+			GF Red Velvet
+			GF Triple Choco
+			GF Caramel
+			GF Cinnamon Roll
+			GF Birthday Cake
+
+	--Peanut Free
+			Rainbow
+			Black and White
+			Cookie Dough
+			Triple Choco Fudge
+			Red Velvet
+			Mint Cookie
+			Choco Chip Pancake
+
+	--Kooky for Cookies
+		Under 100 Cal
+			Black and White
+			Cookie Dough
+			Mint Cookie
+			Gingerbread
+
+
+--Muffins($3)
+	Magnificent Muffins
+		Under 100 calories
+			Blueberry
+			Banana Chip
+			Cinnamon Roll
+			Birthday Cake
+			Orange
+
+
+--Macarons($2)
+	Original MAC
+		contains Nuts
+		Gluten Free
+		Under 100 calories
+			Red Velvet
+			Sugar Cookie
+			Double Choco
+			Snickerdoodle (contains nuts)
+			Cookie Dough
+			Salted Caramel
+
+--Cakes($15/layer)
+	Baby Shower cake
+		Red Velvet
+		Vanilla
+		Bananana Choco
+		Double Choco
+
+
+	Birthday Cake
+		Vanilla
+		Triple Choco Fudge
+		Rainbow
+		Caramel
+
+
+	Anniversary Cake
+		Vanilla
+		Triple Choco Fudge
+		Caramel
+		Red Velvet
+
+	Retirement Cake
+		Vanilla
+		Double Choco
+		Triple Choco Fudge
+		Caramel
